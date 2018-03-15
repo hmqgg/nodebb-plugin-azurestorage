@@ -36,7 +36,7 @@ Settings from database is top priority.
 
 ## File Storage
 
-All files uploaded will be renamed to uuid. For example, ```7afc87d6-02f7-40ed-afdc-9a17bc0e6d27.png```.
+All files uploaded will be renamed. For example, ```somepicture-iob0ucoj.png```.
 
 If you want to make it convenient to manage, it can be found in ```library.js``` and ```function uploadToAzureStorage```.
 
