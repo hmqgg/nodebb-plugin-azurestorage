@@ -3,7 +3,7 @@
 var plugin = {},
     azure = require("azure-storage"),
 	mime = require("mime"),
-	uuid = require("uuid").v4,
+	uniqid = require("uniqid"),
 	fs = require("fs"),
 	request = require("request"),
 	path = require("path"),
@@ -278,7 +278,10 @@ function uploadToAzureStorage(filename, rs, callback) {
 				azPath = "/";
 			}
 			var azKeyPath = azPath.replace(/^\//, "");
-			var key = azKeyPath + uuid() + path.extname(filename);
+			var ename = path.extname(filename);
+			var oname = path.basename(filename, ename);
+
+			var key = azKeyPath + uniqid.time(oname + '-') + ename ;
 			next(null, key);
 		},
 		function(key, next)
