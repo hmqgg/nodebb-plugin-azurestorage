@@ -280,6 +280,7 @@ function uploadToAzureStorage(filename, rs, callback) {
 			var azKeyPath = azPath.replace(/^\//, "");
 			var ename = path.extname(filename);
 			var oname = path.basename(filename, ename);
+			oname = oname.replace(/\ /g, "_");
 
 			var key = azKeyPath + uniqid.time(oname + '-') + ename ;
 			next(null, key);
