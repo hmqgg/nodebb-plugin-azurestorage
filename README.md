@@ -38,6 +38,8 @@ Settings from database is top priority.
 
 All files uploaded will be renamed. For example, ```somepicture-iob0ucoj.png```.
 
+Especially, if filename contains whitespace, the whitespace(s) will be converted to underscore "_".
+
 If you want to make it convenient to manage, it can be found in ```library.js``` and ```function uploadToAzureStorage```.
 
 ## LICENSE
